@@ -88,4 +88,4 @@ target/
 .mypy_cache/
 
 # Exlcude the database file
-.db
+.dbvenv/

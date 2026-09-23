@@ -18,7 +18,7 @@ def upload_file(path):
     )
 
 
-def create_assistant(file):
+def create_assistant_(file):
     """
     You currently cannot set the temperature for Assistant via the API.
     """
@@ -30,6 +30,20 @@ def create_assistant(file):
         file_ids=[file.id],
     )
     return assistant
+
+
+def create_assistant(file):
+    """
+    You currently cannot set the temperature for Assistant via the API.
+    """
+    assistant = client.beta.assistants.create(
+        name="Autagai",
+        instructions="You're a helpful Whatsapp assistant that can assists Intelso's customers using the information on the website https://www.intelso.cm. If you don't know the answer, say simply that you cannot help with question and advice to contact the host directly but don't tell the customers that you're a digital assistant. Be friendly and funny.",
+        tools=[{"type": "web_search"}],
+        model="gpt-4-1106-preview",
+    )
+    return assistant
+
 
 
 # Use context manager to ensure the shelf file is closed properly

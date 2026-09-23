@@ -25,6 +25,9 @@ APP_SECRET = os.getenv("APP_SECRET")
 
 def send_whatsapp_message():
     url = f"https://graph.facebook.com/{VERSION}/{PHONE_NUMBER_ID}/messages"
+    print("URL:", url)
+    print("ACCESS TOKEN:", ACCESS_TOKEN)
+    print("RECIPIENT PHONE NUMBER:", RECIPIENT_WAID)
     headers = {
         "Authorization": "Bearer " + ACCESS_TOKEN,
         "Content-Type": "application/json",
